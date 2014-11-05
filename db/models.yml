@@ -1,0 +1,81 @@
+# Example table for a typical Book model.
+#
+# Book
+#   title: string
+#   author_id: integer
+#   price: integer
+#   summary: text
+#   hardcover: boolean
+#
+# Indent consistently!  Follow the above syntax exactly.
+# Typical column choices are: string, text, integer, boolean, date, time, and datetime.
+#
+#
+# Specifying Default Values
+# ----------------------------------------------------
+# Default column values can be specified like this:
+#    price: integer(0)
+#
+# If not specified, Boolean columns always default to false.
+#
+#
+# Convention-Based Defaults:
+# ----------------------------------------------------
+# You can omit the column type if it's a string, or if it's obviously an integer column:
+#
+#
+# Book
+#   title
+#   author_id
+#   price: integer
+#   summary: text
+#   hardcover: boolean
+#
+# Complete details are in the README file online.
+#
+# Have fun!
+
+Player
+  name
+  team
+  position
+  fan_points: integer
+
+Season
+  year: integer
+  week: integer(1)
+  opponent
+
+Roster
+  player_id
+  season_id
+  statistic_id
+  chart
+
+Statistic
+  pass_yds: integer
+  pass_td: integer
+  pass_int: integer
+  rush_att: integer
+  rush_yds: integer
+  rush_td: integer
+  rec_tgt: integer
+  receptions: integer
+  rec_yds: integer
+  rec_td: integer
+  ret_yds: integer
+  ret_td: integer
+  misc_2pt: integer
+  fum_lost: integer
+
+Report
+  source
+  title
+  author
+  created_at
+  url
+
+Status
+  player_id
+  report_id
+  priority: integer
