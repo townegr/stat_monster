@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'ez', '~> 1.1.3' # easier rails development
 gem 'colorize' # colorful logs
+gem 'sports_data_api' # NFL statistics API
 
 group :developement do
   gem 'spring'
