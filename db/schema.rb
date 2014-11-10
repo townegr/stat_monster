@@ -18,10 +18,13 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "players", force: true do |t|
     t.string  "name"
-    t.string  "team"
     t.string  "position"
     t.integer "fan_points"
+    t.string  "player_code"
+    t.integer "team_id"
   end
+
+  add_index "players", ["team_id"], name: "index_players_on_team_id", using: :btree
 
   create_table "reports", force: true do |t|
     t.string   "source"
@@ -73,5 +76,11 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "statuses", ["player_id"], name: "index_statuses_on_player_id", using: :btree
   add_index "statuses", ["report_id"], name: "index_statuses_on_report_id", using: :btree
+
+  create_table "teams", force: true do |t|
+    t.string "abbr_name"
+    t.string "market"
+    t.string "name"
+  end
 
 end

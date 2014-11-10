@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+SportsDataApi.set_key(:nfl, Rails.application.secrets[:sports_data_api][:key])
+
+SportsDataApi::Nfl.teams.each do |team|
+  Team.create!(abbr_name: team.id, market: team.market, name: team.name)
+end

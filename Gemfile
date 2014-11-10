@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.0.0'
 
-gem 'rails', '4.1.5'
+gem 'rails', '~> 4.1.5'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'ez', '~> 1.1.3' # easier rails development
 gem 'colorize' # colorful logs
-gem 'sports_data_api' # NFL statistics API
+gem 'sports_data_api', '~> 0.1.0' # NFL statistics API
 
 group :developement do
   gem 'spring'
@@ -28,7 +28,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'launchy'

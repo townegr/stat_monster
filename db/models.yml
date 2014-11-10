@@ -1,8 +1,14 @@
 Player
   name
-  team
   position
   fan_points: integer
+  player_code
+  team_id
+
+Team
+  abbr_name
+  market
+  name
 
 Season
   year: integer
