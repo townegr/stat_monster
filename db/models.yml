@@ -24,7 +24,7 @@ Game
   schedule_id
   week_id
 
-Statistic
+Stat
   pass_att: integer
   pass_comp: integer
   pass_yds: integer
@@ -41,8 +41,8 @@ Statistic
   ret_td: integer
   misc_2pt: integer
   fum_lost: integer
-  statisticable_id
-  statisticable_type
+  statable_id
+  statable_type
   week_id
 
 Report

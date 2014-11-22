@@ -1,4 +1,4 @@
-["players", "teams", "schedules", "weeks", "games", "statistics", "reports", "statuses"].each do |table|
+["players", "teams", "schedules", "weeks", "games", "stats", "reports", "statuses"].each do |table|
   ActiveRecord::Base.connection.execute("ALTER SEQUENCE #{table}_id_seq RESTART WITH 1")
 end
 
@@ -57,7 +57,7 @@ Game.all.each do |g|
       SportsDataApi::Nfl.player_week_stats(2014, :REG, g.week_id, g.home_team, g.away_team).stats[type].each do |s|
         Player.all.each do |p|
           if p.name == s[:name]
-            player = p.statistics.find_or_create_by(week_id: g.week_id)
+            player = p.stats.find_or_create_by(week_id: g.week_id)
             binding.pry
             player.attributes.each do |k, v|
               s.each do |item, el|

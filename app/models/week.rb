@@ -1,5 +1,5 @@
 class Week < ActiveRecord::Base
   has_many :games
-  has_many :statistics
+  has_many :stats
   belongs_to :schedule
 end

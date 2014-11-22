@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "schedules", ["player_id"], name: "index_schedules_on_player_id", using: :btree
   add_index "schedules", ["team_id"], name: "index_schedules_on_team_id", using: :btree
 
-  create_table "statistics", force: true do |t|
+  create_table "stats", force: true do |t|
     t.integer "pass_att"
     t.integer "pass_comp"
     t.integer "pass_yds"
@@ -69,13 +69,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "ret_td"
     t.integer "misc_2pt"
     t.integer "fum_lost"
-    t.integer "statisticable_id"
-    t.string  "statisticable_type"
+    t.integer "statable_id"
+    t.string  "statable_type"
     t.integer "week_id"
   end
 
-  add_index "statistics", ["statisticable_id"], name: "index_statistics_on_statisticable_id", using: :btree
-  add_index "statistics", ["week_id"], name: "index_statistics_on_week_id", using: :btree
+  add_index "stats", ["statable_id"], name: "index_stats_on_statable_id", using: :btree
+  add_index "stats", ["week_id"], name: "index_stats_on_week_id", using: :btree
 
   create_table "statuses", force: true do |t|
     t.integer "player_id"
