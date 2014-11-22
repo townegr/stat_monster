@@ -10,18 +10,23 @@ Team
   market
   name
 
-Season
-  year: integer
-  week: integer(1)
-  opponent
-
-Roster
+Schedule
+  team_id
   player_id
-  season_id
-  statistic_id
-  chart
+
+Week
+  week_number: integer(1)
+  schedule_id
+
+Game
+  away_team
+  home_team
+  schedule_id
+  week_id
 
 Statistic
+  pass_att: integer
+  pass_comp: integer
   pass_yds: integer
   pass_td: integer
   pass_int: integer
@@ -36,6 +41,9 @@ Statistic
   ret_td: integer
   misc_2pt: integer
   fum_lost: integer
+  statisticable_id
+  statisticable_type
+  week_id
 
 Report
   source

@@ -1,5 +1,4 @@
 class Statistic < ActiveRecord::Base
-  has_many :rosters
-  has_many :seasons, through: :rosters
-  has_many :players, through: :rosters
+  belongs_to :statisticable, polymorphic: true
+  belongs_to :week
 end

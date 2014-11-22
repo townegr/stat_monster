@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "games", force: true do |t|
+    t.string  "away_team"
+    t.string  "home_team"
+    t.integer "schedule_id"
+    t.integer "week_id"
+  end
+
+  add_index "games", ["schedule_id"], name: "index_games_on_schedule_id", using: :btree
+  add_index "games", ["week_id"], name: "index_games_on_week_id", using: :btree
+
   create_table "players", force: true do |t|
     t.string  "name"
     t.string  "position"
@@ -34,24 +44,17 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "url"
   end
 
-  create_table "rosters", force: true do |t|
+  create_table "schedules", force: true do |t|
+    t.integer "team_id"
     t.integer "player_id"
-    t.integer "season_id"
-    t.integer "statistic_id"
-    t.string  "chart"
   end
 
-  add_index "rosters", ["player_id"], name: "index_rosters_on_player_id", using: :btree
-  add_index "rosters", ["season_id"], name: "index_rosters_on_season_id", using: :btree
-  add_index "rosters", ["statistic_id"], name: "index_rosters_on_statistic_id", using: :btree
-
-  create_table "seasons", force: true do |t|
-    t.integer "year"
-    t.integer "week",     default: 1
-    t.string  "opponent"
-  end
+  add_index "schedules", ["player_id"], name: "index_schedules_on_player_id", using: :btree
+  add_index "schedules", ["team_id"], name: "index_schedules_on_team_id", using: :btree
 
   create_table "statistics", force: true do |t|
+    t.integer "pass_att"
+    t.integer "pass_comp"
     t.integer "pass_yds"
     t.integer "pass_td"
     t.integer "pass_int"
@@ -66,7 +69,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "ret_td"
     t.integer "misc_2pt"
     t.integer "fum_lost"
+    t.integer "statisticable_id"
+    t.string  "statisticable_type"
+    t.integer "week_id"
   end
+
+  add_index "statistics", ["statisticable_id"], name: "index_statistics_on_statisticable_id", using: :btree
+  add_index "statistics", ["week_id"], name: "index_statistics_on_week_id", using: :btree
 
   create_table "statuses", force: true do |t|
     t.integer "player_id"
@@ -82,5 +91,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "market"
     t.string "name"
   end
+
+  create_table "weeks", force: true do |t|
+    t.integer "week_number", default: 1
+    t.integer "schedule_id"
+  end
+
+  add_index "weeks", ["schedule_id"], name: "index_weeks_on_schedule_id", using: :btree
 
 end

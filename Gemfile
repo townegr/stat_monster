@@ -7,13 +7,18 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass', '~> 3.3.1.0'
 gem 'ez', '~> 1.1.3' # easier rails development
 gem 'colorize' # colorful logs
-gem 'sports_data_api', '~> 0.1.0' # NFL statistics API
+gem 'sports_data_api', path: '~/Desktop/Projects/sports_data_api' # NFL statistics API
+gem 'cocoon' # unobtrusive nested forms handling, using jQuery
+gem 'select2-rails' # clean select menus
 
 group :developement do
   gem 'spring'
