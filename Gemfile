@@ -13,28 +13,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'jquery-turbolinks'
-gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails' # automatically adds browser vendor prefixes
 gem 'ez', '~> 1.1.3' # easier rails development
 gem 'colorize' # colorful logs
 gem 'sports_data_api', path: '~/Desktop/Projects/sports_data_api' # NFL statistics API
 gem 'cocoon' # unobtrusive nested forms handling, using jQuery
 gem 'select2-rails' # clean select menus
-gem 'simple_form' # DSL forms
-
-# ===============================================================================
-
-  # Be sure to have a copy of the Bootstrap stylesheet available on your
-  # application, you can get it on http://twitter.github.com/bootstrap.
-
-  # Inside your views, use the 'simple_form_for' with one of the Bootstrap form
-  # classes, '.form-horizontal', '.form-inline', '.form-search' or
-  # '.form-vertical', as the following:
-
-  #   = simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|
-
-# ===============================================================================
-
+gem 'simple_form' # form DSL
 
 group :developement do
   gem 'spring'
