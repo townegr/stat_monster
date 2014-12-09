@@ -17,7 +17,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails' # automatically adds browser vendor prefixes
 gem 'ez', '~> 1.1.3' # easier rails development
 gem 'colorize' # colorful logs
-gem 'sports_data_api', path: '~/Desktop/Projects/sports_data_api' # NFL statistics API
+gem 'sports_data_api', git: 'https://github.com/townegr/sports_data_api.git' # NFL statistics API
 gem 'cocoon' # unobtrusive nested forms handling, using jQuery
 gem 'select2-rails' # clean select menus
 gem 'simple_form' # form DSL

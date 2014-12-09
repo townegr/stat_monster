@@ -1,0 +1,29 @@
+<%= simple_form_for @player_analysis, html: { class: "form-vertical" } do |f| %>
+  <div class='row'>
+    <%= f.input :name, label: 'Player Name', as: :select, collection: Player.ordered, include_blank: true %>
+  </div>
+  <div class='row'>
+    <%= f.label 'Select weeks' %>
+  </div>
+  <div>
+    <%# @weeks.each do |week| %>
+      <%= f.input :weeks, as: :check_boxes, collection: @weeks, include_blank: true, label: false %>
+      <%#= f.label :weeks, "Week #{week.to_s}".html_safe %>
+    <%# end %>
+  </div>
+  <div>
+    <%= f.input :stats, as: :select, collection: player_stats %>
+  </div>
+  <div class='row'>
+    <%= f.submit "Create Report", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $('select#player_analysis_name').select2({
+      placeholder: 'Select a player',
+      allowClear: true
+    });
+  });
+</script>

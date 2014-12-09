@@ -2,6 +2,7 @@ class PlayerAnalysesController < ApplicationController
 
   def new
     @player_analysis = PlayerAnalysis.new
+    @weeks = Week.all.map { |w, v| w[:week_number] }
   end
 
   def create

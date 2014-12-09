@@ -1,5 +1,6 @@
-PATH
-  remote: ~/Desktop/Projects/sports_data_api
+GIT
+  remote: https://github.com/townegr/sports_data_api.git
+  revision: 3d9d306bc53bef2b7a03c26f770b6d0db896f119
   specs:
     sports_data_api (0.1.0)
       nokogiri (~> 1.5.5)

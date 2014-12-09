@@ -4,4 +4,6 @@ class Player < ActiveRecord::Base
   has_many :reports, through: :statuses, dependent: :destroy
   has_many :stats, as: :statable
   belongs_to :team
+
+  scope :ordered, -> { order(:name) }
 end
