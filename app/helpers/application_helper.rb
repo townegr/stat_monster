@@ -18,5 +18,13 @@ module ApplicationHelper
       "fum_lost"
     ]
   end
+
+  # def to_integer
+  #   if self.class == Array
+  #     self.map {|str| str.to_i}
+  #   else
+  #     self.to_i
+  #   end
+  # end
 end
 

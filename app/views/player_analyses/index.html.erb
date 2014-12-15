@@ -1,0 +1,13 @@
+<div>
+  <%= Player.find(@player_analysis.name.to_i).name %>
+</div>
+<div>
+  <% @player_analysis.weeks.each do |week| %>
+    <%= week %>
+  <% end %>
+</div>
+<div>
+  <% @player_analysis.stats.each do |stat| %>
+    <%= stat %>
+  <% end %>
+</div>

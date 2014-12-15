@@ -1,14 +1,14 @@
 class PlayerAnalysis
   include ActiveModel::Model
 
-  attr_accessor :name, :weeks, :stats
-    # :team, :player_profile, :position, :stats, :weeks, :fan_points
+  # before_create :format_integer
+  attr_reader :name, :weeks, :stats
 
-  # def initialize(name, weeks = [], stats = [])
-  #   @name = name
-  #   @weeks = weeks
-  #   @stats = stats
-  # end
+  def initialize(params = {})
+    @name = params[:name]
+    @weeks = params[:weeks]
+    @stats = params[:stats]
+  end
 
   # def player_profile
   #   player_id = Player.where(name: @name).first.id
@@ -58,5 +58,21 @@ class PlayerAnalysis
   #     end
   #   end
   # end
+
+  # def format_integer
+  #   loop do
+  #     self.map {|str| str.class == Array ? str.to_i : }
+  #   end
+  # end
+
+  # def to_int
+  #   self.map {|str| str.to_i}
+  #   # if self.class == Array
+  #   #   self.map {|str| str.to_i}
+  #   # else
+  #   #   self.to_i
+  #   # end
+  # end
+
 
 end
